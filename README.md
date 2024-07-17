@@ -9,6 +9,8 @@ fine-tuning one specific task impact on LLM degrading on other tasks. To avoid d
 
 # 1. PEFT Parameters Effective Fine Tuning
 
+
+
 ## 1.1. Adapters (LoRA is the most commonly used amongst them)
 
 the two low-rank matrices are multiplied together to create a matrix with the same dimensions as the frozen weights. You then add this to the original weights and replace them in the model with these updated values. You now have a LoRA fine-tuned model that can carry out your specific task. Because this model has the same number of parameters as the original, there is little to no impact on inference latency. Researchers have found that applying LoRA to just the self-attention layers of the model is often enough to fine-tune for a task and achieve performance gains. 
