@@ -19,7 +19,7 @@ the two low-rank matrices are multiplied together to create a matrix with the sa
 
 **QLoRA**
 
-QLoRA is a fine-tuning method that combines Quantization and Low-Rank Adapters (LoRA). QLoRA is revolutionary in that it democratizes fine-tuning: it enables one to fine-tune massive models with billions of parameters on relatively small, highly available GPUs. QLoRA aims to futher reduce memory requirements by combining low-rank adaptation with quatization. 
+QLoRA is a fine-tuning method that combines Quantization(in the context of deep learning is the process of reducing the numerical precision of a model's tensors, making the model more compact and the operations faster in execution) and Low-Rank Adapters (LoRA). QLoRA is revolutionary in that it democratizes fine-tuning: it enables one to fine-tune massive models with billions of parameters on relatively small, highly available GPUs. QLoRA aims to futher reduce memory requirements by combining low-rank adaptation with quatization. 
 
 ```
 bnb_config = BitAndBytesConfig(
