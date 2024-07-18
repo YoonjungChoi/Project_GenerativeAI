@@ -110,5 +110,5 @@ smaller PEFT adapter weights and not the full weights of the tunable model.
 2. Prompt-Tuning HuggingFace Doc https://huggingface.co/learn/cookbook/prompt_tuning_peft
 3. BOOK: oreilly, Generative AI on AWS
 4. https://github.com/huggingface/trl/blob/main/examples/notebooks/gpt2-sentiment.ipynb
-5. 
+5. https://sudhirpol522.medium.com/reward-model-training-6d1693e41962
 
