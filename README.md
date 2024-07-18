@@ -38,13 +38,13 @@ With LoRA, the goal was to find an efficient way to update the weights of the mo
 
 # 2. RLHF Reinforcement Learning Human Feedack
 
-Human Alignment: Helpful, Honest, and Harmless **HHH**
-RL is consist of Agent, Policy, Action, Rewards
+Human Alignment: Helpful, Honest, and Harmless. **HHH**
+
+RL is consist of Agent, Policy, Action, Rewards.
 
 **Collecting a Custom Dataset**
 
-To collect Training Dataset with Human-in-the-Loop, instruction should clearly descrie the task for the labler. Providing these detailed human instructions will increase the likelihood that the responses will be high quality and that all individual humans will carry out the laeling task in a consistent way. 
-Using Amazon SageMaker Ground Truth for human annotations.
+To collect Training Dataset with Human-in-the-Loop, instruction should clearly descrie the task for the labler. Providing these detailed human instructions will increase the likelihood that the responses will be high quality and that all individual humans will carry out the laeling task in a consistent way. Using Amazon SageMaker Ground Truth for human annotations.
 
 ![image](https://github.com/user-attachments/assets/4add3685-64c9-4185-b9bc-511d297e4dfc)
 
@@ -58,7 +58,35 @@ The model may generate completion and reward model produce a positive/negarive r
 
 **PPO Proximal Policy Optimization Rl Algorithm**
 
-RL algorithm is called PPO used to perform the actual model weights updates based on the reward value assigned to a given prompt and completion. PPO updates the weights of the generateve model based on the reward value returned from the reward model.
+RL algorithm is called PPO used to perform the actual model weights updates based on the reward value assigned to a given prompt and completion. PPO updates the weights of the generateve model based on the reward value returned from the reward model. PPO will be used to optimize the RL policy against the reward model.
+
+```
+ppo_model = AutoModelForSeq2SeqLMWithValueHead.from_pretrained(peft_model,                                                               
+                                                               torch_dtype=torch.bfloat16,
+                                                               is_trainable=True)
+
+print(f'PPO model parameters to be updated (ValueHead + 769 params):\n{print_number_of_trainable_model_parameters(ppo_model)}\n')
+print(ppo_model.v_head)
+```
+
+During PPO, only a few parameters will be updated. Specifically, the parameters of the ValueHead.
+
+
+```
+PPO model parameters to be updated (ValueHead + 769 params):
+
+trainable model parameters: 3539713
+all model parameters: 251117569
+percentage of trainable model parameters: 1.41%
+
+ValueHead(
+  (dropout): Dropout(p=0.1, inplace=False)
+  (summary): Linear(in_features=768, out_features=1, bias=True)
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+)
+```
+
+
 
 **Prolem: To mitigate reward hacking**, which means that there exists a tendancy to ignore constraints and ack the rewards. Agent may learn to cheat and maximize the reward even if the chosen actions lead to an incorrect state.
 
@@ -78,7 +106,9 @@ smaller PEFT adapter weights and not the full weights of the tunable model.
 
 
 # Reference 
-1. [Coursera Courses](https://www.coursera.org/learn/generative-ai-with-llms)
-2. [Prompt-Tuning HuggingFace Doc](https://huggingface.co/learn/cookbook/prompt_tuning_peft)
+1. Coursera Courses https://www.coursera.org/learn/generative-ai-with-llms
+2. Prompt-Tuning HuggingFace Doc https://huggingface.co/learn/cookbook/prompt_tuning_peft
 3. BOOK: oreilly, Generative AI on AWS
+4. https://github.com/huggingface/trl/blob/main/examples/notebooks/gpt2-sentiment.ipynb
+5. 
 
