@@ -1,4 +1,29 @@
-# Generative AI 
+## File Structure
+```
+Coursera_lab : include coursera courses's lab files
+project_PEFT : explore prompt engineering with zero/few shots, instruct/template prompt and PEFT techiniques with LoRA, QLoRA, Soft Prompt, SFTTrainer
+project_RLHF : explore RLHF techiniques with LoRA, PPOTrainer, reward model, reference model, KL algorithm
+```
+In this journey, **getting to know techniques; PEFT RLHF** is a main point on this repository.
+
+I used two tasks; dialogue summarization and my own task 'turn idiom into straightforward expression'. For example, it is a piece of cake should turn into it is easy
+
+I created 7 idiom cases as idiom subset for experiments.
+7 idiom cases:
+* a piece of cake
+* break a leg
+* cost an arm and a leg
+* go south
+* go bananas
+* give someone the cold shoulder
+* play it by ear
+
+dataset includes train 105 /eval 7 / test 14 samples. 
+
+# ====== STUDY ====== #
+
+# Generative AI with LLM
+
 
 **Compute resources**
 Full-tuning requires lots of compute resources; not only memory but also various other parameters that are required during the training process. 
@@ -85,7 +110,6 @@ ValueHead(
   (flatten): Flatten(start_dim=1, end_dim=-1)
 )
 ```
-
 
 
 **Prolem: To mitigate reward hacking**, which means that there exists a tendancy to ignore constraints and ack the rewards. Agent may learn to cheat and maximize the reward even if the chosen actions lead to an incorrect state.
