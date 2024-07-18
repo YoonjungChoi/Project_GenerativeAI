@@ -17,6 +17,19 @@ the two low-rank matrices are multiplied together to create a matrix with the sa
 
 ![image](https://github.com/user-attachments/assets/a5d17389-2593-4ee5-af84-2e4fbfc3f15e)
 
+**QLoRA**
+
+QLoRA is a fine-tuning method that combines Quantization and Low-Rank Adapters (LoRA). QLoRA is revolutionary in that it democratizes fine-tuning: it enables one to fine-tune massive models with billions of parameters on relatively small, highly available GPUs. QLoRA aims to futher reduce memory requirements by combining low-rank adaptation with quatization. 
+
+```
+bnb_config = BitAndBytesConfig(
+  load_in_4bit=True,
+  bnb_4bit_use_double_quant=True,
+  bnb_4bit_quant_type="n4f",
+  bnb_4bit_compute_dtype=torch.bfloat16)
+
+model = AutoModelForCausalLM.from_pretrained(model_checkpoint, quatization_config=bnb_config)
+```
 
 ## 1.2. Soft-Prompts. (Prompt Tuning)
 With LoRA, the goal was to find an efficient way to update the weights of the model without having to train every single parameter again. There are also additive methods within PEFT that aim to improve model performance without changing the weights at all.
