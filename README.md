@@ -128,6 +128,30 @@ smaller PEFT adapter weights and not the full weights of the tunable model.
 ![image](https://github.com/user-attachments/assets/84a1b0ea-4fe5-4536-8a69-c88f617d2ae5)
 
 
+# 3. RAG: Retrieval-Agumented Generation
+
+RAG is poular to overcome LLM's limitaions ( Halluciation / Knowledge Cut off ) without need to continuosly perform full-tuning or retraining.
+
+RAG is a framework and no need to modify parameters-updates.
+
+RAG Workflow: 
+
+- Data Prepation
+- Application Intergration
+
+**Data Prepation** involves the ingetion of data sources such as documents, pdf, URLs, or Database. 
+
+  - Document Loading aims to "information retrieval from documents". Documents convert vector embeddings by embedding model, and store vector database.
+  - Chunking breaks down larger pieces of text into smaller segments. when choosing chunk strategies, we can consider "larger size can improve ability. LLM's context window can be chunk size, and overlap can help preserve context between chunks.
+
+**Application Intergration** involves retrieving the most semantically similar information from those external data sources based on an input prompt. Then, this is often followed by a reranking process to further refine the retrieved results and rank them in order of  relevance to the input prompt.
+
+  - retrieved information can be used in the workflow to augment the input prompt with additional context context prior to calling LLM.
+  - popular reranking algorithms: Maximum Marginal Relevannce(MMR)
+  - augmented prompt has contextual information specific to the indexed documents as well as the original prompt. LLM is now able to use the information in the contextof the prompt to generate a completion that likely contains a more relevant anser and avoids hallucinations.
+
+
+
 
 # Reference 
 1. Coursera Courses https://www.coursera.org/learn/generative-ai-with-llms
