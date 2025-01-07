@@ -1,12 +1,12 @@
 ## File Structure
 ```
-Coursera_lab : include coursera courses's lab files
-project_PEFT : explore prompt engineering with zero/few shots, instruct/template prompt and PEFT techiniques with LoRA, QLoRA, Soft Prompt, SFTTrainer
-project_RLHF : explore RLHF techiniques with LoRA, PPOTrainer, reward model, reference model, KL algorithm
+0. Coursera_lab : include coursera courses's lab files
+1. project_PEFT : explore prompt engineering with zero/few shots, instruct/template prompt and PEFT techiniques with LoRA, QLoRA, Soft Prompt, SFTTrainer
+2. project_RLHF : explore RLHF techiniques with LoRA, PPOTrainer, reward model, reference model, KL algorithm
+3. RAG
 ```
-In this journey, **getting to know techniques; PEFT RLHF** is a main point on this repository.
 
-I used two tasks; dialogue summarization and my own task 'turn idiom into straightforward expression'. For example, it is a piece of cake should turn into it is easy
+In the "1. project_PEFT" and "2. project_RLHF", I used two dataset; dialogue dataset for the  summarization task and my own idiom dataset for the task 'turn idiom into straightforward expression'. For example, it is a piece of cake should turn into it is easy.
 
 I created 7 idiom cases as idiom subset for experiments.
 7 idiom cases:
@@ -20,7 +20,9 @@ I created 7 idiom cases as idiom subset for experiments.
 
 dataset includes train 105 /eval 7 / test 14 samples. 
 
-# ====== STUDY ====== #
+
+
+# ============ STUDY ============ #
 
 # Generative AI with LLM
 
