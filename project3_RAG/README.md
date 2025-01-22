@@ -1,6 +1,19 @@
 # 1. SimpleRAG
 
 This project is for the study of how to update LLM with the latest content from Wikipedia or Research Paper.
+```
+pip install streamlit
+streamlit run app.py
+
+pip install python-dotenv
+pip install langchain
+pip install openai
+pip install langchain_community
+pip install langchain_openai
+pip install docarray
+```
+
+
 
 Reference: [RAG-Simplified](https://github.com/ShahMitul-GenAI/RAG-Simplified/tree/main)
 
