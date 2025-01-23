@@ -29,6 +29,10 @@ Reference: [RAG-Simplified](https://github.com/ShahMitul-GenAI/RAG-Simplified/tr
 
 # 2. Course - RAG from Scratch 
 
-Reference: [Youtube-freeCodeCamp](https://youtu.be/sVcwVQRHIc8?si=H8nq24PCdlgISIjS)
+Reference:
+
+[Youtube-freeCodeCamp](https://youtu.be/sVcwVQRHIc8?si=H8nq24PCdlgISIjS)
+
+[Youtube-CMU Advanced NLP 2024(10):Retrieval and RAG](https://youtu.be/WQYi-1mvGDM?si=eU7YaRWkpwHBTB5k)
 
 # 3. My Project
