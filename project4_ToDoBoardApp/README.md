@@ -13,6 +13,9 @@ or a series of requests [ "I want to create a note", "call it costco", "write ve
 You can do requests related "Create / Delete / Find / Change Status"
 
 
+[Watch the video](https://github.com/YoonjungChoi/Project_GenerativeAI/blob/main/project4_ToDoBoardApp/Demo_.mp4)
+
+
 ## 2. Setup
 
 **Installation**
