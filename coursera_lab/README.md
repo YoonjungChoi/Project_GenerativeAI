@@ -1,5 +1,5 @@
 
-# [BOOK] Generative AI with LLM 
+# [BOOK_RECAP] Generative AI with LLM 
 
 
 **Compute resources**
