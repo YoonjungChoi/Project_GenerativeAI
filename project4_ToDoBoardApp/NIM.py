@@ -4,7 +4,7 @@ from openai import OpenAI
 
 # loading API keys from env
 load_dotenv()
-NVIDIA_API_KEY = os.environ.get("OPENAI_API_KEY")
+NVIDIA_API_KEY = os.environ.get("NVIDIA_API_KEY")
 
 print(f"LOG NVIDIA_API_KEY{NVIDIA_API_KEY}")
 if NVIDIA_API_KEY == '':
